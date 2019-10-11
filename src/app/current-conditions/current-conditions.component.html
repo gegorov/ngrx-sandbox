@@ -1,5 +1,5 @@
 <div>
-  <div *ngFor="let location  of getCurrentConditions()" class="well flex" (click)="showForecast(location.zip)">
+  <!-- <div *ngFor="let location  of getCurrentConditions()" class="well flex" (click)="showForecast(location.zip)">
     <div>
       <h3>{{location.data.name}} ({{location.zip}})</h3>
       <h4>Current conditions: {{location.data.weather[0].main}}</h4>
@@ -17,5 +17,10 @@
       <span class="close" (click)="locationService.removeLocation(location.zip)">&times;</span>
       <img [src]="weatherService.getWeatherIcon(location.data.weather[0].id)">
     </div>
- </div>
+ </div> -->
+  <ul>
+    <li *ngFor="let zip of zipcodes">
+      {{ zip }}
+    </li>
+  </ul>
 </div>

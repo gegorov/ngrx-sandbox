@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
-import {LocationService} from "../location.service";
+import { Component } from "@angular/core";
+import { LocationService } from "../location.service";
+import { Store } from "@ngrx/store";
+import { State } from "../reducers";
+import { AddZipcode } from "../actions/zipcode.actions";
 
 @Component({
-  selector: 'app-zipcode-entry',
-  templateUrl: './zipcode-entry.component.html'
+  selector: "app-zipcode-entry",
+  templateUrl: "./zipcode-entry.component.html"
 })
 export class ZipcodeEntryComponent {
+  constructor(private store: Store<State>) {}
 
-  constructor(private service : LocationService) { }
-
-  addLocation(zipcode : string){
-    this.service.addLocation(zipcode);
+  addLocation(zipcode: string) {
+    this.store.dispatch(new AddZipcode(zipcode));
   }
-
 }
