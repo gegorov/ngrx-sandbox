@@ -21,11 +21,7 @@
     </div>
     <div>
       <span class="close" (click)="removeZip(zip)">&times;</span>
-      <img
-        [src]="
-          weatherService.getWeatherIcon((getConditions(zip)?.weather)[0].id)
-        "
-      />
+      <img [src]="getIcon((getConditions(zip)?.weather)[0].id)" />
     </div>
   </div>
   <!-- <ul>

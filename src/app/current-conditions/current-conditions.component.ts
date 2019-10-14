@@ -41,4 +41,7 @@ export class CurrentConditionsComponent {
   removeZip(zip) {
     this.store.dispatch(new RemoveZipcode(zip));
   }
+  getIcon(id: string) {
+    return this.weatherService.getWeatherIcon(id);
+  }
 }
