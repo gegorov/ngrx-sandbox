@@ -7,11 +7,9 @@ export enum ZipcodeActionTypes {
 
 export class AddZipcode implements Action {
   readonly type = ZipcodeActionTypes.AddZipcode;
-  public payload: string;
 
-  constructor(zipcode: string) {
-    this.payload = zipcode;
-    console.log("Action fired: ", ZipcodeActionTypes.AddZipcode, this.payload);
+  constructor(public zipcode: string) {
+    console.log("Action fired: ", ZipcodeActionTypes.AddZipcode, this.zipcode);
   }
 }
 

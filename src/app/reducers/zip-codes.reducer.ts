@@ -17,7 +17,7 @@ export function zipcodeReducer(
     case ZipcodeActionTypes.AddZipcode:
       const newState = {
         ...state,
-        zipcodes: [...state.zipcodes, action.payload]
+        zipcodes: [...state.zipcodes, action.zipcode]
       };
       console.log("newstate:", newState);
       return newState;
